@@ -9,12 +9,14 @@ namespace ArrayDeObjetos17._06.Models
     internal class ContaCorrente
     {
 
-        public ContaCorrente(int numero, string titular, int agencia)
+        public ContaCorrente(int numero, string titular, int agencia, decimal saldo)
         {
             Numero = numero;
             Agencia = agencia;
             Titular = titular;
+            Saldo = saldo;
         }
+        public decimal Saldo { get; set; }
         public int Numero { get; set; }
         public string Titular { get; set; }
 
@@ -22,7 +24,7 @@ namespace ArrayDeObjetos17._06.Models
 
         public void ApresentarConta()
         {
-            Console.WriteLine($"Numero: {Numero},Titular: {Titular},Agencia: {Agencia}, ");
+            Console.WriteLine($"Numero: {Numero},Titular: {Titular},Agencia: {Agencia}, Saldo: {Saldo}");
         }
 
 
