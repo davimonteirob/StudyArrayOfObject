@@ -51,5 +51,50 @@ namespace ArrayDeObjetos17._06.Models
 
             Console.WriteLine($" O Maior saldo do Array é: {maiorSaldo}");
         }
+
+ 
+
+        
+        //removendo item do array
+        public void RemoverItem(ContaCorrente conta)
+        {
+           
+            int _proximaPosicao = arrayDeConta.Length;
+            int indiceItem = -1;
+            //for para encontrar o índice
+            for (int i = 0; i < _proximaPosicao; i++)
+            {
+                ContaCorrente contaAtual = arrayDeConta[i];
+                //a contaAsendo igual, encontramos a posição da nossa conta no array por meio do parâmetro recebido.
+                if (contaAtual == conta)
+                {
+                    //a cada repetição essa condição é testada, quando confirmada (a conta igual) o indice que achou
+                    // a conta é salvo em "indiceItem"
+                    indiceItem = i;
+                    break;// o break para sair do for, da estrutura de repetição
+                }
+
+            }
+            //aqui usamos o indice que encontramos no for anterior, que é a conta que recebemos como parâmetro,
+            //pois confirmamos pela condição que ambas são iguais.
+            //inicialmente a partir da conta a ser removida a estrutura de repetição começa pela posição da conta
+            //a ser removida. Assim, a conta da posição posterior assume a posição da anterior e assim por diante
+            //até a a condição exigida do laço de repetição ser satisfeita.
+            
+
+            for (int i = indiceItem; i < _proximaPosicao - 1; i++)
+            {
+                //aqui adicionamos à posição da conta que queremos remover a conta da posição posterior,
+                //removendo assim a conta.
+                arrayDeConta[i] = arrayDeConta[i + 1];
+            }
+            _proximaPosicao--;//será decrementado - 1
+            //aqui colocamos na última posição um "null"
+            arrayDeConta[_proximaPosicao] = null;
+            
+
+           
+
+        }
     }
 }
