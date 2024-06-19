@@ -92,7 +92,11 @@ namespace ArrayDeObjetos17._06.Models
             //aqui colocamos na última posição um "null"
             arrayDeConta[_proximaPosicao] = null;
             
+            //encontrar uma conta através de um índice
+            public ContaCorrente RecuperarItemIndice(int indice)
+            {
 
+            }
            
 
         }
