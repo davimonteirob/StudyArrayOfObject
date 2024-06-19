@@ -8,6 +8,19 @@ namespace ArrayDeObjetos17._06.Models
 {
     internal class ClassArrayConta
     {
+        int _proximaPosicao = 7;
+ 
+        //propriedade define o tamanho do array
+        //propriedade apenas de leitura
+
+        public  int Tamanho 
+        {
+            get
+            {
+                return _proximaPosicao;  
+            }
+                
+        }
         ContaCorrente[] arrayDeConta = new ContaCorrente[]
          {
                   //instanciamos a conta e atribuimos valor de acordo com a conta;
@@ -22,7 +35,7 @@ namespace ArrayDeObjetos17._06.Models
             for (int posi = 0; posi < arrayDeConta.Length; posi++)
             {
                 ContaCorrente itemArrayConta = arrayDeConta[posi];
-                Console.WriteLine($" Titular: {itemArrayConta.Titular}, Númere: {itemArrayConta.Numero}, Agência: {itemArrayConta.Agencia}");
+                Console.WriteLine($" Titular: {itemArrayConta.Titular}, Número: {itemArrayConta.Numero}, Agência: {itemArrayConta.Agencia}");
             }
         }
 
@@ -59,7 +72,6 @@ namespace ArrayDeObjetos17._06.Models
         public void RemoverItem(ContaCorrente conta)
         {
            
-            int _proximaPosicao = arrayDeConta.Length;
             int indiceItem = -1;
             //for para encontrar o índice
             for (int i = 0; i < _proximaPosicao; i++)
@@ -91,14 +103,17 @@ namespace ArrayDeObjetos17._06.Models
             _proximaPosicao--;//será decrementado - 1
             //aqui colocamos na última posição um "null"
             arrayDeConta[_proximaPosicao] = null;
-            
-            //encontrar uma conta através de um índice
-            public ContaCorrente RecuperarItemIndice(int indice)
+        }
+        //encontrar uma conta através de um índice
+        public ContaCorrente RecuperarItemIndice(int indice)
+        {
+            if (indice < 0 || indice > arrayDeConta.Length)
             {
-
+                Console.WriteLine("O índice é nullo ou maior que a capacidade do array");
             }
-           
+            ContaCorrente contaIndice = arrayDeConta[indice];
 
+            return contaIndice;
         }
     }
 }
