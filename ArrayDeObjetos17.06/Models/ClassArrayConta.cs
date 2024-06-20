@@ -115,5 +115,19 @@ namespace ArrayDeObjetos17._06.Models
 
             return contaIndice;
         }
+
+        // Definindo o indexador
+
+        //Para criar um indexador,
+        //precisamos usar a palavra reservada this com um índice inteiro em
+        //uma estrutura bem parecida a uma propriedade e definir a forma de recuperar
+        //um elemento do vetor interno da classe.
+        public ContaCorrente this[int indice]
+        {
+            get
+            {
+                return RecuperarItemIndice(indice);
+            }
+        }
     }
 }
